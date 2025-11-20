@@ -1,0 +1,386 @@
+/* Basic Reset & Body Styles */
+:root {
+    --netflix-red: #E50914;
+    --netflix-dark-red: #C11119;
+    --bg-gray: #232323;
+    --card-gray: #191919;
+    --text-gray: #737373;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-wrapper {
+    position: relative;
+    border-bottom: 8px solid var(--bg-gray);
+}
+
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88a/a3873901-5b7c-460b-9643-001374934b52/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.netflix-logo {
+    width: 90px;
+    height: auto;
+    fill: var(--netflix-red);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #aaa;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.globe-icon, .caret-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-red {
+    background-color: var(--netflix-red);
+    color: white;
+    padding: 0.5rem 1rem;
+}
+.btn-red:hover {
+    background-color: var(--netflix-dark-red);
+}
+
+.hero-main-content {
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+}
+
+.hero-main-content h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.hero-main-content .subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.hero-main-content .cta-prompt {
+    font-size: 1.125rem;
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+}
+
+.email-form {
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.email-input-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+.email-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #737373;
+    border-radius: 4px;
+    color: white;
+    padding: 1.5rem 1rem 0.5rem;
+    font-size: 1rem;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.email-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.email-input:focus + .email-label,
+.email-input:not(:placeholder-shown) + .email-label {
+    top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.btn-large {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+}
+
+.chevron-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Section Separator */
+.section-separator {
+    height: 0.5rem;
+    background-color: var(--bg-gray);
+}
+
+/* Page Sections */
+.page-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Trending Section */
+.trending-container {
+    position: relative;
+}
+.trending-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    /* For aesthetics */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.trending-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.trending-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+}
+.trending-number {
+    font-size: 7rem;
+    font-weight: 800;
+    color: #000;
+    -webkit-text-stroke: 4px #888;
+    z-index: 1;
+}
+.trending-item img {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+    margin-left: -2.5rem;
+    margin-bottom: 0.25rem;
+    transition: transform 0.3s ease;
+}
+.trending-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+.feature-card {
+    background-color: var(--card-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.feature-card p {
+    color: #e5e5e5;
+    flex-grow: 1;
+}
+.feature-icon {
+    font-size: 3rem;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+/* FAQ Section */
+.faq-section .section-title, .faq-section .cta-prompt {
+    text-align: center;
+}
+.faq-list {
+    max-width: 815px;
+    margin: 2rem auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.faq-item {
+    background-color: #2d2d2d;
+}
+.faq-question {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    cursor: default;
+}
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1.125rem;
+    border-top: 1px solid #000;
+}
+
+
+/* Footer */
+.page-footer {
+    padding: 3rem 2rem;
+    color: var(--text-gray);
+}
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.footer-contact {
+    margin-bottom: 2rem;
+}
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+.footer-lang-selector {
+    border-color: var(--text-gray);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+.footer-country {
+    font-size: 0.875rem;
+}
+
+
+/* Responsive Design */
+
+@media (min-width: 768px) {
+    .netflix-logo {
+        width: 134px;
+    }
+    .hero-main-content {
+        padding: 7rem 2rem 8rem;
+    }
+    .hero-main-content h1 {
+        font-size: 3rem;
+    }
+    .email-form {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .page-section {
+        padding: 4rem 2rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .trending-number {
+        font-size: 9rem;
+    }
+    .trending-item img {
+        width: 150px;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-links-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .hero-main-content h1 {
+        font-size: 3.5rem;
+    }
+     .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

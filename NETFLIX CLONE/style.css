@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: 'NetflixFont';
+    src: url('assets/images/NetflixSans-Bold.otf') format('woff2'),
+        url('assets/images/NetflixSans-Bold.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'NetflixFont', sans-serif;
+    background-color: black;
+}
+.main {
+    background-image: url(assets/images/main_background.jpg);
+    height: 98vh;
+    position: relative;
+ background-size: cover ;     /* max(1200px, 100vw) */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.main-box {
+    height: 98vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    max-width: 77vw;
+    height: 65px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img{
+    color: red;
+    position: relative;
+    z-index: 10;
+}
+nav button{
+     position: relative;
+    z-index: 10;
+}
+.hero {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   color: white;
+    font-family: 'NetflixFont', sans-serif;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    gap: 23px;
+    padding:  0 30px;
+}
+/* .hero>:nth-child(1)  this thing > is used to indicate immediate first child of a parent wihtin the tag */
+.hero>:nth-child(1) {
+    font-size: 56px;
+    font-weight: 900;
+}
+.hero>:nth-child(2) {
+    font-size: 56px;
+    font-weight: 900;
+}
+.hero> :nth-child(3) {
+    gap: 24px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.hero> :nth-child(4) {
+    font-size: 16px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.separator {
+    height: 5px;
+    background-color: rgb(29, 29, 29);
+    position: relative;
+    z-index: 20; /* Ensures it is on top of the main background */
+}
+.btn{
+    padding: 3px 8px;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+}
+.btn-gs{
+    background-color: red;
+    padding:  10px 25px;
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 4px;
+}
+.btn-si{
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 13px;
+    border-radius: 4px;
+}
+.btn-eng{
+     color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 17px;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid gray;
+    margin-right: 10px;
+}
+.fill-email{
+    
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #737373;
+    border-radius: 4px;
+    color: white;
+     padding:  15px 120px 15px 15px;
+     margin-bottom: 20px;
+}
+.slider-section{
+    margin-top: 20px;
+   
+    width: 80vw;
+   
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+}
+.sectiontitle{
+    font-size: 20px;
+    color: white;
+
+top: 20px;
+position: relative;
+}
+.slider{
+    margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+.slider::-webkit-scrollbar{
+    display: none;
+}
+.card{
+    position: relative;
+    flex: 0 0 auto;
+    height: 240px;
+    scroll-snap-align: start;
+    overflow: visible;
+    padding: 15px 10px;
+    transition: transform 0.3s ease;
+
+}
+.card:hover{
+    transform: scale(1.1);
+    z-index: 10;
+    }
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 9px;
+
+}
+.number{
+    position: absolute;
+    bottom: 15px;
+    left: -9px;
+   font-size: 90px;
+   font-weight: bold;
+    color: black;
+    -webkit-text-stroke: 1px white;
+}
+.reason-section{
+    margin-top: 20px;
+   
+    width: 80vw;
+   height: 400px;
+   overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+   
+}
+.reason-section-title{
+    font-size: 20px;
+    color: white;
+
+top: 10px;
+position: relative;
+}
+.reason-cards{
+    margin-top: 20px;
+    display: flex;
+    gap: 17px;
+    height: 280px;
+    width: 80vw;
+  
+}
+
+
+
+
+.reason-card {
+    position: relative; /* keep relative for icon placement */
+    background: linear-gradient(180deg, #1a1f3f 0%, #210e18 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 250px;
+    width: 18vw;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column; /* stack heading + paragraph naturally */
+}
+
+.reason-card h3 {
+    color: white;
+    font-family: 'NetflixFont', sans-serif;
+    margin-bottom: 10px;
+}
+
+.reason-card p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(165, 164, 162);
+    font-size: 15px;
+    line-height: 1.3;
+    padding-right: 60px; /* space for icon so text doesn’t overlap */
+}
+
+.reason-card img {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    height: 63px;
+}
+/* FAQ Section Styling */
+.faq-section {
+    width: 80vw;
+    margin: 80px auto;
+    color: white;
+    text-align: center;
+}
+
+.faq-section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.faq-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    background-color: #2d2d2d;
+   
+    overflow: hidden;
+    text-align: left;
+}
+
+.faq-question {
+    padding: 25px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.faq-question:hover {
+    background-color: #414141;
+}
+
+.faq-answer {
+    display: none;
+    padding: 25px;
+    background-color: #2d2d2d;
+    border-top: 1px solid black;
+    font-size: 18px;
+    color: #bdbdbd;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.plus {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.faq-email {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.faq-email p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Footer Section */
+.footer {
+    width: 80vw;
+    margin: 50px auto;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.language-select {
+    margin: 20px 0;
+}
+
+.netflix-india {
+    font-size: 13px;
+}
+
+/* Small animation for FAQ */
+.faq-item.active .plus {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.faq-question .plus {
+    transition: transform 0.3s ease;
+}
